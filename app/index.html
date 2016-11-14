@@ -5,26 +5,71 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-COMPATIBLE" content="IE=edge">
   <meta name="viewport" content="width=device-width, user-scalable=no">
-  <script src="resources/js/angular/angular.js"></script>
-  <script src="userService.js"></script>
-
+  <!-- CSS -->
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="resources/css/bootstrap/bootstrap.min.css">
+  <!-- Morris CSS -->
+  <link rel="stylesheet" href="resources/css/morris/morris.css">
+  <!-- Main body content CSS -->
+  <link rel="stylesheet" href="resources/css/body/cover.css">
+  <!-- Navigation top bar CSS -->
+  <link rel="stylesheet" href="resources/css/navbar/navstyle.css">
+  <!-- Side bar CSS  -->
+  <link rel="stylesheet" href="resources/css/sidebar/sidebar.css">
 </head>
-
 <body>
-  <div class ="mainContainer" data-ng-app="UserApp">
-      <h1> User Scenario </h1>
 
-      <div data-ng-controller="MainCtrl">
-        <table class="table table-bordered" ng-repeat="module in ocw.modelOutputs">
-          <tr>
-            <td>
-              <p class="Label">{{ module.varLabel}}</p>
-              <p class="Name">{{ module.varName}}</p>
-              <p class="Unit">{{ module.varUnit}}</p>
-              <p class="Value">{{ module.varValue}}</p>
-            </td>
-          </tr>
-        </table>
-      </div>
-  </div>
+<!-- Loads the areagraph -->
+<body>
+<div class="whitebox">
+  <!-- Graphs -->
+  <div id="areagraph"></div>
+</div>
 </body>
+<!-- Gets the valeus from the JSON file -->
+<!-- <div id="line-example"> -->
+<div class="mainContainer" data-ng-app="UserApp">
+  <h1> Data Visualization </h1>
+  <div data-ng-controller="MainCtrl">
+    <table class="table table-bordered" ng-repeat="module in ocw.modelOutputs">
+      <tr>
+        <td>
+          <p> {{ module.varLabel}} </p>
+          <p> {{ module.varName}}  </p>
+          <p> {{ module.varUnit}}  </p>
+          <p> {{ module.varValue}} </p>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<!-- </div> -->
+</body>
+
+  <!-- JQuery Java Scripts -->
+  <script src="resources/js/jquery/jquery-2.1.1.min.js"> </script>
+  <!-- Bootstrap Java Script -->
+  <script src="resources/js/bootstrap/bootstrap.min.js"></script>
+  <!-- D3 Java Script -->
+  <script src="resources/js/d3/d3.v3.min.js"></script>
+  <!-- Morris Java Script Library -->
+  <script src="resources/js/morris/jquery.min.js"></script>
+  <script src="resources/js/morris/raphael-min.js"></script>
+  <!-- Read CSV File Java Script -->
+  <script src="resources/js/graphs/read-file.js"></script>
+  <!-- Morris Line Graph Java Script-->
+  <script src="resources/js/graphs/linegraph.js"></script>
+  <!-- Morris Area Graph Java Script-->
+  <script src="resources/js/graphs/areagraph.js"></script>
+  <!-- Morris Bar Graph Java Script-->
+  <script src="resources/js/graphs/bargraph.js"></script>
+  <!-- Main body D3 -  Bar Chart Java Script -->
+  <script src="resources/js/graphs/chart.js"></script>
+  <!-- Side bar Java Script -->
+  <script src="resources/js/sidebar/angular.min.js"></script>
+  <!-- Navigation top bar Java Script-->
+  <script src="resources/js/sidebar/index.js"></script>
+
+  <script src="script/userService.js"></script>
+  <script src="script/line-example.js"></script>
+</html>
