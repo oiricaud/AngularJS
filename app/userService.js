@@ -1,24 +1,35 @@
 
 var app = angular.module("UserApp", []);
 
-app.service("userService", function ($http, $q)
-{
-    var deferred = $q.defer();
-    $http.get('/AngularDataVisualization/app/userscenario.json').then(function (data)
-    {
-        deferred.resolve(data);
-    });
-    this.getPlayers = function()
-    {
-        return deferred.promise;
-    }
-})
-    .controller("userCtrl", function($scope, userService)
-    {
-        var promise = userService.getPlayers();
-        promise.then(function (data)
-        {
-            $scope.team = data;
-            console.log($scope.team)
-        });
-    });
+app.controller('MainCtrl', function($scope) {
+    var modelOutputs = {
+        "modelOutputs":
+            [
+                {
+                    "varLabel": "Farm Income",
+                    "varName": "Ag_Ben_p",
+                    "varValue": [
+                        { "year": "1", "NM": 52758, "TX": 46008 },
+                        { "year": "2", "NM": 52758, "TX": 46008 },
+                        { "year": "3", "NM": 52758, "TX": 46008 }
+                    ],
+                    "varUnit": "$1000 USD",
+                    "xkey" : "year",
+                    "ykeys" : ["NM", "TX"]
+                },
+                {
+                    "varLabel": "Urban Net Benefits",
+                    "varName": "urb_value_af_p",
+                    "varValue": [
+                        { "year": "1", "NM": 20699, "TX": 163630 },
+                        { "year": "2", "NM": 20658, "TX": 163250 },
+                        { "year": "3", "NM": 20611, "TX": 162816 }
+                    ],
+                    "varUnit": "$1000 USD",
+                    "xkey" : "year",
+                    "ykeys" : ["NM", "TX"]
+                }
+        ]
+    };
+    $scope.ocw = modelOutputs;
+});

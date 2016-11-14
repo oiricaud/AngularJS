@@ -12,8 +12,19 @@
 
 <body>
   <div class ="mainContainer" data-ng-app="UserApp">
-    <h1> User Scenario </h1>
-    <div data-ng-controller="userCtrl"> </div>
-  </div>
+      <h1> User Scenario </h1>
 
+      <div data-ng-controller="MainCtrl">
+        <table class="table table-bordered" ng-repeat="module in ocw.modelOutputs">
+          <tr>
+            <td>
+              <p class="Label">{{ module.varLabel}}</p>
+              <p class="Name">{{ module.varName}}</p>
+              <p class="Unit">{{ module.varUnit}}</p>
+              <p class="Value">{{ module.varValue}}</p>
+            </td>
+          </tr>
+        </table>
+      </div>
+  </div>
 </body>
