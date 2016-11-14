@@ -1,0 +1,19 @@
+.chart div {
+    font: 10px sans-serif;
+    background-color: steelblue;
+    text-align: right;
+    padding: 3px;
+    margin: 1px;
+    color: white;
+}
+#linegraph {
+    height: 250px;
+}
+#bargraph {
+    height: 250px;
+    width: 250px;
+}
+#areagraph {
+    height: 250px;
+    width: 250px;
+}
